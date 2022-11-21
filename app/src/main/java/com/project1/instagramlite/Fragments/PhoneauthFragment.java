@@ -1,6 +1,6 @@
 package com.project1.instagramlite.Fragments;
 
-import android.content.Context;
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -26,9 +26,10 @@ import com.google.firebase.auth.PhoneAuthCredential;
 
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.project1.instagramlite.AuthActivity;
+
+import com.project1.instagramlite.MainActivity;
 import com.project1.instagramlite.R;
-import com.project1.instagramlite.SubActivity;
+
 import com.project1.instagramlite.databinding.FragmentPhoneauthBinding;
 
 
@@ -107,7 +108,7 @@ binding.progressBar.setVisibility(View.INVISIBLE);
                         bundle.putString("auth",s);
                         phoneauthFragment.setArguments(bundle);
 
-                        navController.navigate(R.id.action_phoneauthFragment_to_otpFragment);
+                        navController.navigate(R.id.action_phoneauthFragment_to_otpFragment,bundle);
 
 
                         Toast.makeText(getContext(), "Otp has been sent", Toast.LENGTH_SHORT).show();
@@ -130,8 +131,8 @@ binding.progressBar.setVisibility(View.INVISIBLE);
 //    }
 
     private void sentToHome() {
-        Intent intent=new Intent(getActivity(), SubActivity.class);
-        startActivity(intent);
+        Intent intent=new Intent(requireContext(), MainActivity.class);
+        requireContext().startActivity(intent);
             }
 
 

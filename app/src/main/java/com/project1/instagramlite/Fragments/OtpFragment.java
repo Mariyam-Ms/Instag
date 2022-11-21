@@ -20,9 +20,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+import com.project1.instagramlite.MainActivity;
 import com.project1.instagramlite.SubActivity;
 import com.project1.instagramlite.databinding.FragmentOtpBinding;
 
@@ -82,18 +84,25 @@ private FragmentOtpBinding binding;
 
     }
 
-
+//
 //    @Override
 //    public void onAttach(@NonNull Context context) {
 //        super.onAttach(context);
-//                FirebaseUser currentUser = firebaseAuth.getCurrentUser();
-//        if(currentUser != null){
-//            sendToHome();
-//        }
+//
 //    }
 
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+       if(currentUser != null){
+            sendToHome();
+        }
+    }
+
     private void sendToHome(){
-        Intent intent=new Intent(getActivity(), SubActivity.class);
+        Intent intent=new Intent(requireActivity(), MainActivity.class);
         startActivity(intent);
     }
     }
