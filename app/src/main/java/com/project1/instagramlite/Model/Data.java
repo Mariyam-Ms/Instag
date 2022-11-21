@@ -1,10 +1,30 @@
 package com.project1.instagramlite.Model;
 
-import com.google.type.Date;
+
+import java.util.Date;
 
 public class Data extends PostId{
     String user,image,about;
-    Date   time;
+    Date time;
+    public Data (){
+
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
 
     public String getUser() {
         return user;

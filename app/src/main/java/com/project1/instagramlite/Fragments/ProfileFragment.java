@@ -25,6 +25,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.project1.instagramlite.AuthActivity;
 import com.project1.instagramlite.R;
 
 import com.project1.instagramlite.databinding.FragmentProfileBinding;
@@ -113,8 +114,9 @@ private TextView editProfile,signOut;
 
                 auth.signOut();
                 bottomSheetDialog.dismiss();
-                Intent intent=new Intent( getActivity(), SigninFragment.class);
-                startActivity(intent);
+                Intent intent=new Intent( requireActivity(), AuthActivity.class);
+                requireActivity().startActivity(intent);
+                requireActivity().finish();
 
 
             }

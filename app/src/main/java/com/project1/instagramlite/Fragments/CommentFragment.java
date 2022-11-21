@@ -47,9 +47,13 @@ private FirebaseAuth auth;
 private FirebaseFirestore firebaseFirestore;
 private String post_id;
 private String current_user_id;
+
 private AdapterCmt adapterCmt;
 private List<Comments>mList;
 private List<Users>usersList;
+
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -67,7 +71,8 @@ private List<Users>usersList;
         firebaseFirestore=FirebaseFirestore.getInstance();
         mList=new ArrayList<>();
         usersList=new ArrayList<>();
-        adapterCmt=new AdapterCmt(getActivity(),mList,usersList);
+        adapterCmt=new AdapterCmt(requireActivity(),mList,usersList);
+
         post_id=getArguments().getString("postid");
 
         current_user_id= Objects.requireNonNull(auth.getCurrentUser()).getUid();

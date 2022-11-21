@@ -31,12 +31,18 @@
             android:id="@+id/image_to_post"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_baseline_add_24"
+
             android:scaleType="fitXY"/>
 
 
     </androidx.cardview.widget.CardView>
-
+<!--TODO Need to check about progress bar
+ recyclerView of comments
+ Stable recyclerView spacing in home
+ After Comment I want editText text to disappear
+ above delete option or any other how it actually works
+ deep link all saved in one place
+ download image to gallery direct-->
     <ProgressBar
         android:id="@+id/progressBar3"
         style="?android:attr/progressBarStyle"

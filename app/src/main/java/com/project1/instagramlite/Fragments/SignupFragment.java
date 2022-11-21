@@ -71,7 +71,7 @@ public class SignupFragment extends Fragment {
                                     if(firebaseUser.isEmailVerified()){
 
                                         Toast.makeText(getContext(), "Successfully Register ", Toast.LENGTH_SHORT).show();
-                                    Intent intent=new Intent(getActivity(), MainActivity.class);
+                                    Intent intent=new Intent(requireActivity(), MainActivity.class);
                                     startActivity(intent);
                                     }else{
                                         firebaseUser.sendEmailVerification();

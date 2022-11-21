@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_navigation"
-    app:startDestination="@id/profileSetupFragment">
+    app:startDestination="@id/homeFragment">
 
 
     <fragment
@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_homeFragment_to_commentFragment"
             app:destination="@id/commentFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileSetupFragment"
+            app:destination="@id/profileSetupFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -37,13 +40,11 @@
         <action
             android:id="@+id/action_searchFragment_to_profileFragment2"
             app:destination="@id/profileFragment"
-            app:popUpToInclusive="true"
-            app:popUpTo="@id/searchFragment"/>
+          />
         <action
             android:id="@+id/action_searchFragment_to_homeFragment"
             app:destination="@id/homeFragment"
-            app:popUpToInclusive="true"
-            app:popUpTo="@id/searchFragment"/>
+          />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -53,13 +54,11 @@
         <action
             android:id="@+id/action_profileFragment_to_homeFragment"
             app:destination="@id/homeFragment"
-            app:popUpToInclusive="true"
-            app:popUpTo="@id/profileFragment"/>
+            />
         <action
             android:id="@+id/action_profileFragment_to_searchFragment"
             app:destination="@id/searchFragment"
-            app:popUpToInclusive="true"
-            app:popUpTo="@id/profileFragment"/>
+          />
         <action
             android:id="@+id/action_profileFragment_to_profileSetupFragment"
             app:destination="@id/profileSetupFragment"

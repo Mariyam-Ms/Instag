@@ -1,5 +1,6 @@
 package com.project1.instagramlite.Fragments;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -26,6 +27,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.project1.instagramlite.MainActivity;
 import com.project1.instagramlite.R;
 import com.project1.instagramlite.databinding.FragmentProfileSetupBinding;
 import com.squareup.picasso.Picasso;
@@ -98,7 +100,7 @@ private String Uid;
             @Override
             public void onClick(View v) {
                 String name =binding.namePs.getText().toString();
-
+//TODO error is coming Crashing if user without any changes try to update
 
             if(!name.isEmpty() && imageUri!=null){
                 binding.progressBar2.setVisibility(View.VISIBLE);
@@ -121,7 +123,7 @@ private String Uid;
                         }
                     }
                 });
-            }else{
+            } else{
                 savetoFireStoreProfile(null,name,imageUri);
                 Toast.makeText(getContext(), "Please Fill Requirements", Toast.LENGTH_SHORT).show();
 
@@ -146,7 +148,7 @@ private String Uid;
                public void onComplete(@NonNull Task<Void> task) {
                    if (task.isSuccessful()) {
                        Toast.makeText(getContext(), "Profile saved", Toast.LENGTH_SHORT).show();
-                       navController.navigate(R.id.action_profileSetupFragment_to_profileFragment);
+                       navController.navigate(R.id.action_profileSetupFragment_to_homeFragment);
                    } else {
                        Toast.makeText(getContext(), task.getException().toString(), Toast.LENGTH_SHORT).show();
 
@@ -171,6 +173,7 @@ private String Uid;
 
                 }
             });
+
 
 
 

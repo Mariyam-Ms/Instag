@@ -163,4 +163,13 @@ private NavController navController;
         });
 
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if(auth.getCurrentUser()!=null){
+         startActivity(new Intent(requireActivity(),MainActivity.class));
+         requireActivity().finish();
+        }
+    }
 }
